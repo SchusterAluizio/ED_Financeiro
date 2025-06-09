@@ -295,9 +295,10 @@ const CaixasEBancos: React.FC = () => {
         >
           <span>Insira as informações da transferência</span>
           <FieldRow>
-            <FieldWrapper>
+            <FieldWrapper style={{ width: "240px" }}>
               <FieldLabel>Conta origem</FieldLabel>
               <SelectInput
+                style={{ height: "40px" }}
                 value={originAccount}
                 onChange={(e) => setOriginAccount(e.target.value)}
               >
@@ -313,9 +314,10 @@ const CaixasEBancos: React.FC = () => {
               <BalanceInfo>Saldo: R$ {getBalance(originAccount)}</BalanceInfo>
             </FieldWrapper>
             <Arrow>→</Arrow>
-            <FieldWrapper>
+            <FieldWrapper style={{ width: "240px" }}>
               <FieldLabel>Conta destino</FieldLabel>
               <SelectInput
+                style={{ height: "40px" }}
                 value={destinationAccount}
                 onChange={(e) => setDestinationAccount(e.target.value)}
               >
@@ -334,17 +336,19 @@ const CaixasEBancos: React.FC = () => {
             </FieldWrapper>
           </FieldRow>
           <FieldRow>
-            <FieldWrapper>
+            <FieldWrapper style={{ width: "240px" }}>
               <FieldLabel>Valor R$</FieldLabel>
               <TextInput
+                style={{ height: "40px" }}
                 type="number"
                 value={transferValue}
                 onChange={(e) => setTransferValue(e.target.value)}
               />
             </FieldWrapper>
-            <FieldWrapper>
+            <FieldWrapper style={{ width: "240px" }}>
               <FieldLabel>Data da transferência</FieldLabel>
               <TextInput
+                style={{ height: "40px" }}
                 type="date"
                 value={transferDate}
                 onChange={(e) => setTransferDate(e.target.value)}

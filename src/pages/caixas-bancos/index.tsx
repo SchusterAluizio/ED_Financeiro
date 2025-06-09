@@ -17,6 +17,8 @@ import {
   SlidePanel,
   PanelForm,
   FieldRow,
+  FieldWrapper,
+  FieldLabel,
   TextInput,
   SelectInput,
   TextArea,
@@ -179,59 +181,79 @@ const CaixasEBancos: React.FC = () => {
             console.log({ category, date, value, type, competencia, account, historico });
           }}
         >
-          <SelectInput
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="" disabled>
-              Selecione a categoria
-            </option>
-            <option value="venda">Venda</option>
-            <option value="servico">Serviço</option>
-            <option value="salario">Salário</option>
-            <option value="impostos">Impostos</option>
-            <option value="outros">Outros</option>
-          </SelectInput>
-          <FieldRow>
-            <TextInput
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-            <TextInput
-              type="number"
-              placeholder="Valor (R$)"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-            />
-            <SelectInput value={type} onChange={(e) => setType(e.target.value)}>
-              <option value="entrada">Entrada</option>
-              <option value="saida">Saída</option>
-            </SelectInput>
-          </FieldRow>
-          <FieldRow>
-            <TextInput
-              placeholder="Competência"
-              value={competencia}
-              onChange={(e) => setCompetencia(e.target.value)}
-            />
+          <FieldWrapper>
+            <FieldLabel>Categoria</FieldLabel>
             <SelectInput
-              value={account}
-              onChange={(e) => setAccount(e.target.value)}
+              style={{ height: "30px" }}
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
             >
               <option value="" disabled>
-                Conta
+                Selecione a categoria
               </option>
-              <option value="1">Conta 1</option>
-              <option value="2">Conta 2</option>
+              <option value="venda">Venda</option>
+              <option value="servico">Serviço</option>
+              <option value="salario">Salário</option>
+              <option value="impostos">Impostos</option>
+              <option value="outros">Outros</option>
             </SelectInput>
+          </FieldWrapper>
+          <FieldRow>
+            <FieldWrapper>
+              <FieldLabel>Data</FieldLabel>
+              <TextInput
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </FieldWrapper>
+            <FieldWrapper>
+              <FieldLabel>Valor R$</FieldLabel>
+              <TextInput
+                type="number"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
+            </FieldWrapper>
+            <FieldWrapper>
+              <FieldLabel>Tipo</FieldLabel>
+              <SelectInput value={type} onChange={(e) => setType(e.target.value)}>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+              </SelectInput>
+            </FieldWrapper>
           </FieldRow>
-          <TextArea
-            rows={3}
-            placeholder="Histórico"
-            value={historico}
-            onChange={(e) => setHistorico(e.target.value)}
-          />
+          <FieldRow>
+            <FieldWrapper>
+              <FieldLabel>Competência</FieldLabel>
+              <TextInput
+                type="date"
+                value={competencia}
+                onChange={(e) => setCompetencia(e.target.value)}
+              />
+            </FieldWrapper>
+            <FieldWrapper>
+              <FieldLabel>Conta</FieldLabel>
+              <SelectInput
+                value={account}
+                onChange={(e) => setAccount(e.target.value)}
+              >
+                <option value="" disabled>
+                  Conta
+                </option>
+                <option value="1">Conta 1</option>
+                <option value="2">Conta 2</option>
+              </SelectInput>
+            </FieldWrapper>
+          </FieldRow>
+          <FieldWrapper>
+            <FieldLabel>Histórico</FieldLabel>
+            <TextArea
+              rows={3}
+              value={historico}
+              onChange={(e) => setHistorico(e.target.value)}
+            />
+          </FieldWrapper>
           <PanelActions>
             <button type="button" onClick={() => setShowLaunch(false)}>
               Cancelar

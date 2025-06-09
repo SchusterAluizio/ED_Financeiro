@@ -144,6 +144,17 @@ export const FieldRow = styled.div`
   gap: 10px;
 `;
 
+export const FieldWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+export const FieldLabel = styled.label`
+  font-size: 12px;
+  margin-bottom: 4px;
+`;
+
 export const TextInput = styled.input`
   padding: 5px;
   border: 1px solid #ccc;
@@ -169,4 +180,5 @@ export const PanelActions = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  margin-top: auto;
 `;

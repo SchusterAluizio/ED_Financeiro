@@ -19,6 +19,9 @@ function Sidebar() {
                 <NavItem>
                     <StyledNavLink to="/lancamentos">Lançamentos</StyledNavLink>
                 </NavItem>
+                <NavItem>
+                    <StyledNavLink to="/caixas-bancos">Caixas e Bancos</StyledNavLink>
+                </NavItem>
             </NavList>
         </SidebarContainer>
     );

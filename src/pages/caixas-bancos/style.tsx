@@ -20,10 +20,10 @@ export const Breadcrumb = styled.span`
 
 export const Selector = styled.select`
   padding: 5px;
-  background-color: #2ecc71;
+  background-color: #2c3e50;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
 `;
 
 export const SearchInput = styled.input`
@@ -76,9 +76,10 @@ export const SidePanel = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #f4f4f9;
+  background-color: #fff;
   padding: 10px;
   border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const ButtonGreen = styled.button`
@@ -98,6 +99,11 @@ export const Summary = styled.div`
   gap: 6px;
 `;
 
+export const SummaryItem = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const SideLink = styled.a`
   color: #2c3e50;
   text-decoration: none;
@@ -107,4 +113,20 @@ export const SideLink = styled.a`
   &:hover {
     background-color: #e8e8ec;
   }
+`;
+
+export const SlidePanel = styled.div<{ open: boolean }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(${(p) => (p.open ? '0' : '100%')});
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 10;
 `;

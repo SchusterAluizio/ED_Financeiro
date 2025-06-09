@@ -184,3 +184,13 @@ export const PanelActions = styled.div`
   margin-top: auto;
   margin-bottom: 20px;
 `;
+
+export const BalanceInfo = styled.span`
+  font-size: 10px;
+  color: #666;
+`;
+
+export const Arrow = styled.span`
+  font-size: 20px;
+  align-self: flex-end;
+`;

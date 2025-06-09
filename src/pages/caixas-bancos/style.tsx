@@ -127,7 +127,7 @@ export const SlidePanel = styled.div<{ open: boolean }>`
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 40px;
+  padding: 20px 20px 60px;
   overflow-y: auto;
   z-index: 10;
 `;
@@ -182,4 +182,5 @@ export const PanelActions = styled.div`
   justify-content: flex-end;
   gap: 10px;
   margin-top: auto;
+  margin-bottom: 20px;
 `;

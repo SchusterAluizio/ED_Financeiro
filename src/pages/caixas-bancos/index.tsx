@@ -22,7 +22,9 @@ import {
   TextInput,
   SelectInput,
   TextArea,
-  PanelActions
+  PanelActions,
+  BalanceInfo,
+  Arrow
 } from "./style";
 
 const CaixasEBancos: React.FC = () => {
@@ -36,6 +38,20 @@ const CaixasEBancos: React.FC = () => {
   const [competencia, setCompetencia] = useState("");
   const [account, setAccount] = useState("");
   const [historico, setHistorico] = useState("");
+  const [originAccount, setOriginAccount] = useState("");
+  const [destinationAccount, setDestinationAccount] = useState("");
+  const [transferValue, setTransferValue] = useState("");
+  const [transferDate, setTransferDate] = useState("");
+
+  const accountsOptions = [
+    { id: "1", name: "Conta 1", balance: 70 },
+    { id: "2", name: "Conta 2", balance: 30 },
+  ];
+
+  const getBalance = (id: string) => {
+    const acc = accountsOptions.find((a) => a.id === id);
+    return acc ? acc.balance.toFixed(2) : "0.00";
+  };
 
   const rows = [
     {
@@ -266,6 +282,82 @@ const CaixasEBancos: React.FC = () => {
       <SlidePanel open={showTransfer}>
         <button onClick={() => setShowTransfer(false)}>Fechar</button>
         <h3>Transferência entre contas</h3>
+        <PanelForm
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log({
+              originAccount,
+              destinationAccount,
+              transferValue,
+              transferDate,
+            });
+          }}
+        >
+          <span>Insira as informações da transferência</span>
+          <FieldRow>
+            <FieldWrapper>
+              <FieldLabel>Conta origem</FieldLabel>
+              <SelectInput
+                value={originAccount}
+                onChange={(e) => setOriginAccount(e.target.value)}
+              >
+                <option value="" disabled>
+                  Conta
+                </option>
+                {accountsOptions.map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {a.name}
+                  </option>
+                ))}
+              </SelectInput>
+              <BalanceInfo>Saldo: R$ {getBalance(originAccount)}</BalanceInfo>
+            </FieldWrapper>
+            <Arrow>→</Arrow>
+            <FieldWrapper>
+              <FieldLabel>Conta destino</FieldLabel>
+              <SelectInput
+                value={destinationAccount}
+                onChange={(e) => setDestinationAccount(e.target.value)}
+              >
+                <option value="" disabled>
+                  Conta
+                </option>
+                {accountsOptions.map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {a.name}
+                  </option>
+                ))}
+              </SelectInput>
+              <BalanceInfo>
+                Saldo: R$ {getBalance(destinationAccount)}
+              </BalanceInfo>
+            </FieldWrapper>
+          </FieldRow>
+          <FieldRow>
+            <FieldWrapper>
+              <FieldLabel>Valor R$</FieldLabel>
+              <TextInput
+                type="number"
+                value={transferValue}
+                onChange={(e) => setTransferValue(e.target.value)}
+              />
+            </FieldWrapper>
+            <FieldWrapper>
+              <FieldLabel>Data da transferência</FieldLabel>
+              <TextInput
+                type="date"
+                value={transferDate}
+                onChange={(e) => setTransferDate(e.target.value)}
+              />
+            </FieldWrapper>
+          </FieldRow>
+          <PanelActions>
+            <button type="button" onClick={() => setShowTransfer(false)}>
+              Cancelar
+            </button>
+            <ButtonGreen type="submit">Salvar</ButtonGreen>
+          </PanelActions>
+        </PanelForm>
       </SlidePanel>
     </Container>
   );

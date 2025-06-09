@@ -181,7 +181,7 @@ const CaixasEBancos: React.FC = () => {
             console.log({ category, date, value, type, competencia, account, historico });
           }}
         >
-          <FieldWrapper style={{ width: "360px" }}>
+          <FieldWrapper style={{ width: "380px" }}>
             <FieldLabel>Categoria</FieldLabel>
             <SelectInput
               style={{ height: "30px" }}

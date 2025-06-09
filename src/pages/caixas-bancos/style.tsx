@@ -119,7 +119,7 @@ export const SlidePanel = styled.div<{ open: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
-  width: 380px;
+  width: 420px;
   height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -127,7 +127,7 @@ export const SlidePanel = styled.div<{ open: boolean }>`
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 20px 40px;
   overflow-y: auto;
   z-index: 10;
 `;

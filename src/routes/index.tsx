@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/layout';
 import Lacamentos from '../pages/lancamentos';
+import CaixasEBancos from '../pages/caixas-bancos';
 import Login from '../pages/login';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/about" element={<div>about</div>} />
                 <Route path="/contact" element={<div>contact</div>} />
                 <Route path="/lancamentos" element={<Lacamentos />} />
+                <Route path="/caixas-bancos" element={<CaixasEBancos />} />
             </Route>
 
 

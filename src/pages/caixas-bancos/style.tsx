@@ -143,6 +143,7 @@ export const FieldRow = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
 `;
 
 export const FieldWrapper = styled.div`
@@ -182,7 +183,7 @@ export const PanelActions = styled.div`
   justify-content: flex-end;
   gap: 10px;
   margin-top: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `;
 
 export const BalanceInfo = styled.span`
@@ -192,5 +193,5 @@ export const BalanceInfo = styled.span`
 
 export const Arrow = styled.span`
   font-size: 20px;
-  align-self: flex-end;
+  align-self: center;
 `;

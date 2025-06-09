@@ -119,7 +119,7 @@ export const SlidePanel = styled.div<{ open: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 380px;
   height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -148,7 +148,7 @@ export const FieldRow = styled.div`
 export const FieldWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90px;
+  width: 120px;
 `;
 
 export const FieldLabel = styled.label`
@@ -181,5 +181,5 @@ export const PanelActions = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
 `;

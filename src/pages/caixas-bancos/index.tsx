@@ -181,7 +181,7 @@ const CaixasEBancos: React.FC = () => {
             console.log({ category, date, value, type, competencia, account, historico });
           }}
         >
-          <FieldWrapper>
+          <FieldWrapper style={{ width: "360px" }}>
             <FieldLabel>Categoria</FieldLabel>
             <SelectInput
               style={{ height: "30px" }}
@@ -246,10 +246,11 @@ const CaixasEBancos: React.FC = () => {
               </SelectInput>
             </FieldWrapper>
           </FieldRow>
-          <FieldWrapper>
+          <FieldWrapper style={{ width: "360px" }}>
             <FieldLabel>Histórico</FieldLabel>
             <TextArea
-              rows={3}
+              rows={9}
+              style={{ width: "360px" }}
               value={historico}
               onChange={(e) => setHistorico(e.target.value)}
             />

@@ -14,13 +14,26 @@ import {
   Summary,
   SideLink,
   SummaryItem,
-  SlidePanel
+  SlidePanel,
+  PanelForm,
+  FieldRow,
+  TextInput,
+  SelectInput,
+  TextArea,
+  PanelActions
 } from "./style";
 
 const CaixasEBancos: React.FC = () => {
   const [tab, setTab] = useState<string>("movimentacoes");
   const [showLaunch, setShowLaunch] = useState(false);
   const [showTransfer, setShowTransfer] = useState(false);
+  const [category, setCategory] = useState("");
+  const [date, setDate] = useState("");
+  const [value, setValue] = useState("");
+  const [type, setType] = useState("entrada");
+  const [competencia, setCompetencia] = useState("");
+  const [account, setAccount] = useState("");
+  const [historico, setHistorico] = useState("");
 
   const rows = [
     {
@@ -159,7 +172,73 @@ const CaixasEBancos: React.FC = () => {
       </SidePanel>
       <SlidePanel open={showLaunch}>
         <button onClick={() => setShowLaunch(false)}>Fechar</button>
-        <h3>Novo lançamento</h3>
+        <h3>Lançamento de caixa</h3>
+        <PanelForm
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log({ category, date, value, type, competencia, account, historico });
+          }}
+        >
+          <SelectInput
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="" disabled>
+              Selecione a categoria
+            </option>
+            <option value="venda">Venda</option>
+            <option value="servico">Serviço</option>
+            <option value="salario">Salário</option>
+            <option value="impostos">Impostos</option>
+            <option value="outros">Outros</option>
+          </SelectInput>
+          <FieldRow>
+            <TextInput
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            <TextInput
+              type="number"
+              placeholder="Valor (R$)"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <SelectInput value={type} onChange={(e) => setType(e.target.value)}>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </SelectInput>
+          </FieldRow>
+          <FieldRow>
+            <TextInput
+              placeholder="Competência"
+              value={competencia}
+              onChange={(e) => setCompetencia(e.target.value)}
+            />
+            <SelectInput
+              value={account}
+              onChange={(e) => setAccount(e.target.value)}
+            >
+              <option value="" disabled>
+                Conta
+              </option>
+              <option value="1">Conta 1</option>
+              <option value="2">Conta 2</option>
+            </SelectInput>
+          </FieldRow>
+          <TextArea
+            rows={3}
+            placeholder="Histórico"
+            value={historico}
+            onChange={(e) => setHistorico(e.target.value)}
+          />
+          <PanelActions>
+            <button type="button" onClick={() => setShowLaunch(false)}>
+              Cancelar
+            </button>
+            <ButtonGreen type="submit">Salvar</ButtonGreen>
+          </PanelActions>
+        </PanelForm>
       </SlidePanel>
       <SlidePanel open={showTransfer}>
         <button onClick={() => setShowTransfer(false)}>Fechar</button>

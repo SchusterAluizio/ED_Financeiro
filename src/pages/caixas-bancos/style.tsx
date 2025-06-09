@@ -130,3 +130,43 @@ export const SlidePanel = styled.div<{ open: boolean }>`
   padding: 20px;
   z-index: 10;
 `;
+
+export const PanelForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+`;
+
+export const FieldRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+
+export const TextInput = styled.input`
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+`;
+
+export const SelectInput = styled.select`
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+`;
+
+export const TextArea = styled.textarea`
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+`;
+
+export const PanelActions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+`;

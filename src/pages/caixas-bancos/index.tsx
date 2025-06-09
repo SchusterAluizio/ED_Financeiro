@@ -11,7 +11,8 @@ import {
   Actions,
   SidePanel,
   ButtonGreen,
-  Summary
+  Summary,
+  SideLink
 } from "./style";
 
 const CaixasEBancos: React.FC = () => {
@@ -72,18 +73,68 @@ const CaixasEBancos: React.FC = () => {
                 <td>02 - Mercado Livre (Ebazarr)</td>
                 <td style={{ color: "green" }}>V 100,00</td>
               </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>02/06/2025</td>
+                <td></td>
+                <td>Pagamento recebido via transferência</td>
+                <td>Beltrano ME</td>
+                <td>01 - Conta Corrente</td>
+                <td style={{ color: "green" }}>V 80,00</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>03/06/2025</td>
+                <td></td>
+                <td>Pagamento de boleto</td>
+                <td>Fornecedor X</td>
+                <td>01 - Conta Corrente</td>
+                <td style={{ color: "red" }}>R$ 50,00</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>04/06/2025</td>
+                <td></td>
+                <td>Compra de materiais</td>
+                <td>Fornecedor Y</td>
+                <td>02 - Mercado Livre (Ebazarr)</td>
+                <td style={{ color: "red" }}>R$ 30,00</td>
+              </tr>
             </tbody>
           </table>
         </TableWrapper>
       </div>
       <SidePanel>
         <ButtonGreen>Incluir lançamento</ButtonGreen>
-        <ButtonGreen>Transferência entre contas</ButtonGreen>
+        <SideLink>Transferência entre contas</SideLink>
         <Summary>
-          <p>Quantidade de registros: 1</p>
-          <p>Saldo atual da conta: R$ 100,00</p>
-          <p>Entradas: R$ 100,00</p>
-          <p>Saídas: R$ 0,00</p>
+          <div>
+            Quantidade de registros:
+            <strong>4</strong>
+          </div>
+          <div>
+            Saldo atual da conta:
+            <strong>R$ 100,00</strong>
+          </div>
+          <div style={{ color: "green" }}>
+            Entradas:
+            <strong> R$ 180,00</strong>
+          </div>
+          <div style={{ color: "red" }}>
+            Saídas:
+            <strong> R$ 80,00</strong>
+          </div>
+          <div style={{ marginTop: "10px" }}>
+            <strong>Saldos</strong>
+          </div>
+          <div>Conta 1 - R$ 70,00</div>
+          <div>Conta 2 - R$ 30,00</div>
         </Summary>
       </SidePanel>
     </Container>

@@ -9,8 +9,9 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 10px;
+  gap: 10px;
 `;
 
 export const Breadcrumb = styled.span`
@@ -29,6 +30,8 @@ export const SearchInput = styled.input`
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 `;
 
 export const Tabs = styled.div`
@@ -54,12 +57,15 @@ export const Actions = styled.div`
 
 export const TableWrapper = styled.div`
   overflow-x: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
   table {
     width: 100%;
     border-collapse: collapse;
   }
   th, td {
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 8px;
     text-align: left;
   }
@@ -70,18 +76,35 @@ export const SidePanel = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #f4f4f9;
+  padding: 10px;
+  border-radius: 8px;
 `;
 
 export const ButtonGreen = styled.button`
-  background-color: #2ecc71;
+  background-color: #2c3e50;
   color: white;
   border: none;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
 `;
 
 export const Summary = styled.div`
   background-color: #f4f4f9;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
+export const SideLink = styled.a`
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: #e8e8ec;
+  }
 `;

@@ -57,6 +57,23 @@ export const Actions = styled.div`
   margin-bottom: 10px;
 `;
 
+export const IconButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e8e8ec;
+  }
+`;
+
 export const TableWrapper = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;

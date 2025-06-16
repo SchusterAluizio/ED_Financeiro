@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPrint, FaFileExport, FaPlus, FaExchangeAlt } from "react-icons/fa";
+import { FaPrint, FaFileExport, FaPlus, FaExchangeAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import {
   Container,
   Breadcrumb,
@@ -428,7 +428,7 @@ const CaixasEBancos: React.FC = () => {
       {showInfo ? (
         <SidePanel>
           <ToggleButton onClick={() => setShowInfo(false)}>
-            Fechar
+            <FaChevronLeft />
           </ToggleButton>
           <Summary>
             <SummaryItem>
@@ -455,7 +455,9 @@ const CaixasEBancos: React.FC = () => {
           </Summary>
         </SidePanel>
       ) : (
-        <ToggleButton onClick={() => setShowInfo(true)}>Abrir painel</ToggleButton>
+        <ToggleButton collapsed onClick={() => setShowInfo(true)}>
+          <FaChevronRight />
+        </ToggleButton>
       )}
       <SlidePanel open={showLaunch}>
         <button onClick={() => setShowLaunch(false)}>Fechar</button>

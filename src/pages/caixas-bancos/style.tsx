@@ -105,6 +105,15 @@ export const SidePanel = styled.aside`
   border: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
+export const ToggleButton = styled.button`
+  background-color: ${({ theme }) => theme.button.background};
+  color: ${({ theme }) => theme.button.color};
+  border: ${({ theme }) => theme.button.border};
+  padding: ${({ theme }) => theme.button.padding};
+  border-radius: ${({ theme }) => theme.button.borderRadius};
+  cursor: pointer;
+`;
+
 export const ButtonGreen = styled.button`
   background-color: ${({ theme }) => theme.button.background};
   color: ${({ theme }) => theme.button.color};

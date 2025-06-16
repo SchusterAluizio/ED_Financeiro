@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const SidebarContainer = styled.aside`
   width: 250px;
-  background-color: #2c3e50;
-  color: white;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ export const NavItem = styled.li`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: #ecf0f1;
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   font-size: 1.1rem;
   padding: 10px;
@@ -31,11 +31,12 @@ export const StyledNavLink = styled(NavLink)`
   border-radius: 4px;
 
   &.active {
-    background-color: #3498db;
-    color: white;
+    background-color: ${({ theme }) => theme.button.background};
+    color: ${({ theme }) => theme.button.color};
+    border: ${({ theme }) => theme.button.border};
   }
 
   &:hover {
-    background-color: #34495e;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;

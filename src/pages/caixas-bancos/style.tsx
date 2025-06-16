@@ -105,13 +105,24 @@ export const SidePanel = styled.aside`
   border: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
-export const ToggleButton = styled.button`
+export const ToggleButton = styled.button<{ collapsed?: boolean }>`
   background-color: ${({ theme }) => theme.button.background};
   color: ${({ theme }) => theme.button.color};
   border: ${({ theme }) => theme.button.border};
-  padding: ${({ theme }) => theme.button.padding};
-  border-radius: ${({ theme }) => theme.button.borderRadius};
+  padding: ${({ collapsed, theme }) =>
+    collapsed ? "0" : theme.button.padding};
+  border-radius: ${({ collapsed, theme }) =>
+    collapsed ? "8px 0 0 8px" : theme.button.borderRadius};
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ collapsed }) =>
+    collapsed &&
+    `
+    width: 24px;
+    height: 60px;
+  `}
 `;
 
 export const ButtonGreen = styled.button`

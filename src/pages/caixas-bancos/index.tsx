@@ -429,8 +429,6 @@ const CaixasEBancos: React.FC = () => {
         <SidePanel>
           <ToggleButton onClick={() => setShowInfo(false)}>
             <FaChevronRight />
-
-            <FaChevronLeft />
           </ToggleButton>
           <Summary>
             <SummaryItem>
@@ -459,8 +457,6 @@ const CaixasEBancos: React.FC = () => {
       ) : (
         <ToggleButton collapsed onClick={() => setShowInfo(true)}>
           <FaChevronLeft />
-
-          <FaChevronRight />
         </ToggleButton>
       )}
       <SlidePanel open={showLaunch}>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaPrint, FaFileExport, FaPlus, FaExchangeAlt } from "react-icons/fa";
 import {
   Container,
   Breadcrumb,
@@ -9,10 +10,10 @@ import {
   Tab,
   TableWrapper,
   Actions,
+  IconButton,
   SidePanel,
   ButtonGreen,
   Summary,
-  SideLink,
   SummaryItem,
   SlidePanel,
   PanelForm,
@@ -353,8 +354,21 @@ const CaixasEBancos: React.FC = () => {
           </Selector>
         </Header>
         <Actions>
-          <button>Imprimir saldos</button>
-          <button>Exportar extrato</button>
+          <IconButton title="Imprimir saldos">
+            <FaPrint />
+          </IconButton>
+          <IconButton title="Exportar extrato">
+            <FaFileExport />
+          </IconButton>
+          <IconButton title="Incluir lançamento" onClick={() => setShowLaunch(true)}>
+            <FaPlus />
+          </IconButton>
+          <IconButton
+            title="Transferência entre contas"
+            onClick={() => setShowTransfer(true)}
+          >
+            <FaExchangeAlt />
+          </IconButton>
         </Actions>
         <SearchInput placeholder="Pesquise por nome ou histórico" />
         <Tabs>
@@ -410,12 +424,6 @@ const CaixasEBancos: React.FC = () => {
         </TableWrapper>
       </div>
       <SidePanel>
-        <ButtonGreen onClick={() => setShowLaunch(true)}>
-          Incluir lançamento
-        </ButtonGreen>
-        <SideLink onClick={() => setShowTransfer(true)}>
-          Transferência entre contas
-        </SideLink>
         <Summary>
           <SummaryItem>
             Quantidade de registros:
